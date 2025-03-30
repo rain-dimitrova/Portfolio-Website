@@ -1,0 +1,170 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    padding: 20px; /* Added for better spacing */
+    background-attachment: fixed; /* Optional: keeps image fixed during scrolling */
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+@font-face {
+    font-family: Mokoto, sans-serif;
+    src: url(mokoto.regular.ttf);
+}
+
+div {
+    font-family: Mokoto;
+}
+
+/* Fixed navbar container */
+.navbar-container {
+    display: flex;
+    justify-content: space-between; /* This is key for left/right alignment */
+    align-items: center;
+    max-width: 1200px; /* Added max-width for better control */
+    margin: 0 auto;
+    width: 100%; /* Ensures it takes full width */
+}
+
+/* Removed .navbar-items as it's not needed */
+/* If you need it, modify as shown below */
+
+.nav-links {
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 0 20px; /* Adjusted padding */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    height: 50px;
+    border: 1px solid #ddd;
+}
+
+/* If you want to keep .navbar-items */
+.navbar-items {
+    display: flex;
+    justify-content: flex-end; /* Aligns nav to right */
+    width: auto; /* Changed from 100% */
+}
+
+.logo {
+    font-size: 24px;
+    color: rgb(245, 104, 172);
+    padding: 5px 0;
+    /* Removed margin-right as it's not needed with space-between */
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    gap: 15px; /* Added for better spacing between links */
+}
+
+.nav-links a {
+    text-decoration: none;
+    padding: 10px;
+    color: black;
+    white-space: nowrap; /* Prevents text wrapping */
+}
+
+.banner {
+    display: flex;
+    justify-content: baseline;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    height: 500px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero h1 {
+    color: #ddd;
+    font-size: 120px;
+    
+}
+.scrolling-banner {
+    background-color: #ff5e8a; /* Pink banner color */
+    color: white;
+    padding: 10px 0px;
+    overflow: auto;
+    white-space: nowrap;
+    width: 100%;
+    position: relative; /* Keeps banner in normal flow */
+    z-index: 1; /* Keeps banner above other content if needed */
+  /* Your existing banner styles remain unchanged */
+}
+  
+  
+  .scrolling-text {
+    display: inline-block;
+    animation: scroll 20s linear infinite;
+    font-family: Mokoto, sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+  
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* New content section styling */
+.intro {
+    margin-top: 0; /* No space above - sits right against banner */
+    padding: 40px 20px;
+    background: rgba(0, 0, 0, 0.8); /* Dark semi-transparent background */
+    color: white;
+  }
+  
+  /* Optional: Add smooth transition when content loads */
+  .intro {
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .intro img {
+    width: 400px;
+    height: 400px;
+  }
+
+  .intro {
+    margin: 100px auto;
+    display: flex;
+    width: 1000px;
+  }
+
+  .intro-text {
+    margin-left: 30px;
+  }
+
+  .intro-text h1 {
+    font-size: 70px;
+  }
+
+  .intro button {
+    background-color: #ff5e8a;
+    border: none;
+    color: #ffffff;
+    border-radius: 10px;
+    width: 120px;
+    height: 50px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+  }
