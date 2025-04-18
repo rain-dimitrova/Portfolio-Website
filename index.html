@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    
+    <script src="https://kit.fontawesome.com/b8c733d7f7.js" crossorigin="anonymous"></script>
 
     <title>Document</title>
 </head>
@@ -45,7 +45,7 @@
     </div>
 
     <div class="intro">
-        <img src="testimage.jpg" alt="">
+        <img src="images/testimage.jpg" alt="">
 
         <div class="intro-text">
             <h1>Hello!</h1>
@@ -60,27 +60,60 @@
                 dolorem saepe aliquid numquam hic eaque!
             </p>
             <div class="intro-buttons">
-                <button>PORTFOLIO</button>
-                <button>CONTACT ME</button>
+                <a href="portfolio.html" class="button">PORTFOLIO</a>
+                <a href="about.html" class="button">ABOUT ME</a>
+                <a href="contact.html" class="button">CONTACT</a>
             </div>
         </div>
     </div>
+    <div class="carouselindex">
+        <div class="carouselheader">
+            <h1>PORTFOLIO</h1>
+        </div>
+        <input type="radio" name="position" value="img1" checked>
+        <input type="radio" name="position" value="img2">
+        <input type="radio" name="position" value="img3">
+        <input type="radio" name="position" value="img4">
+        <input type="radio" name="position" value="img5">
+        <main id="carousel">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </main>
+    </div>
 
-    <div class="carousel">
-        <div class="imagecarousel">
-            <img src="testimage.jpg" alt="" />
-            <img src="testimage.jpg" alt="" />
-            <img src="testimage.jpg" alt="" />
-            <img src="testimage.jpg" alt="" />
-
-            <img src="testimage.jpg" alt="" />
-            <img src="testimage.jpg" alt="" />
-            <img src="testimage.jpg" alt="" />
-            <img src="testimage.jpg" alt="" />
+    <div class="footer">
+        <div class="footerlinks">
+            <a href="index.html">HOME</a>
+            <a href="portfolio.html">PORTFOLIO</a>
+            <a href="about.html">ABOUT ME</a>
+            <a href="contact.html">CONTACT</a>
+        </div>
+        <div class="footersocmed">
+            <div class="footericons">
+                <i class="fa-brands fa-instagram custom-instagram"></i> <br>
+                <i class="fa-brands fa-twitter custom-twitter"></i> <br>
+                <i class="fa-solid fa-envelope custom-email"></i> <br>
+            </div>
+            <div class="footerusernames">
+                <p>@qiuuchu</p>
+                <p>@qiuuchu</p>
+                <p>qiuuchu@gmail.com</p>
+            </div>
+        </div>
+        <div class="footercontact">
+            <h1>GET IN TOUCH!</h1>
+            <p>Request a service or collaborate with me!</p>
+            <a href="contact.html" class="button">CONTACT</a>
         </div>
     </div>
 
-    
+    <div class="copyright">
+        <p>&copy;2025 All Rights Reserved</p>
+    </div>
+
 
 </body>
 

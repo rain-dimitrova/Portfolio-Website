@@ -21,75 +21,82 @@
         </div>
     </div>
 
-    <section class="commission-form">
-        <h2>Project Request</h2>
-        <form action="https://formspree.io/f/your-form-id" method="POST" enctype="multipart/form-data">
+        <section class="commission-section">
+            <div class="commission-container">
+                <h1>Request a Commission</h1>
 
-            <!-- basic info -->
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="name">Full Name*</label>
-                    <input type="text" id="name" name="name" required>
+                <form class="commission-form" action="mailto:your-email@example.com" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <label for="name">Full Name*</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email*</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="type">Art Type*</label>
+                        <select id="type" name="type" required>
+                            <option value="" disabled selected>Select commission type...</option>
+                            <option value="portrait">Portrait Illustration</option>
+                            <option value="illustration">Full Body Illustration</option>
+                            <option value="character-design">Character Design</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Project Description*</label>
+                        <textarea id="description" name="description" rows="5" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="deadline">Desired Deadline (optional)</label>
+                        <input type="date" id="deadline" name="deadline">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reference">Reference Images*</label>
+                        <input type="file" id="reference" name="reference" accept="image/*" multiple required>
+                        <p class="file-hint">Upload JPG, PNG, or GIF files (max 5MB each)</p>
+                    </div>
+
+                    <div class="form-group terms">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">I agree to the <a href="/terms">commission terms</a>*</label>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Request</button>
+                </form>
+            </div>
+            <div class="footer">
+                <div class="footerlinks">
+                    <a href="index.html">HOME</a>
+                    <a href="portfolio.html">PORTFOLIO</a>
+                    <a href="about.html">ABOUT ME</a>
+                    <a href="contact.html">CONTACT</a>
                 </div>
-
-                <div class="form-group">
-                    <label for="email">Email*</label>
-                    <input type="email" id="email" name="email" required>
+                <div class="footersocmed">
+                    <div class="footericons">
+                        <i class="fa-brands fa-instagram custom-instagram"></i> <br>
+                        <i class="fa-brands fa-twitter custom-twitter"></i> <br>
+                        <i class="fa-solid fa-envelope custom-email"></i> <br>
+                    </div>
+                    <div class="footerusernames">
+                        <p>@qiuuchu</p>
+                        <p>@qiuuchu</p>
+                        <p>qiuuchu@gmail.com</p>
+                    </div>
+                </div>
+                <div class="footercontact">
+                    <h1>GET IN TOUCH!</h1>
+                    <p>Request a service or collaborate with me!</p>
+                    <a href="contact.html" class="button">CONTACT</a>
                 </div>
             </div>
+        </section>
+    </body>
 
-            <!-- details of project -->
-            <div class="form-group">
-                <label for="project-type">Project Type*</label>
-                <select id="project-type" name="project-type" required>
-                    <option value="" disabled selected>Select one...</option>
-                    <option value="portrait">Portrait Illustration</option>
-                    <option value="illustration">Full Body Illustration</option>
-                    <option value="logo">Graphic Design</option>
-                    <option value="logo">Animation</option>
-                    <option value="other">Other</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="description">Description*</label>
-                <textarea id="description" name="description" rows="5" required
-                    placeholder="Describe what you would like (subject, style, size, deadline...)"></textarea>
-            </div>
-
-            <!-- Budget & Files -->
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="budget">Budget Range</label>
-                    <select id="budget" name="budget">
-                        <option value="" selected>Not specified</option>
-                        <option value="50-100">$50-$100</option>
-                        <option value="100-200">$100-$200</option>
-                        <option value="200+">$200+</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="reference">Reference Images (optional)</label>
-                    <input type="file" id="reference" name="reference" accept="image/*">
-                </div>
-            </div>
-
-            <!-- T&Cs -->
-            <div class="form-group terms">
-                <input type="checkbox" id="terms" name="terms" required>
-                <label for="terms">I agree to the <a href="/terms">commission terms</a>*</label>
-            </div>
-
-            <!-- submit form -->
-            <button type="submit" class="submit-btn">Send Request</button>
-
-            <!-- Fallback for non-formspree users -->
-            <input type="hidden" name="_next" value="/thank-you">
-            <input type="text" name="_gotcha" style="display:none">
-        </form>
-    </section>
-    </div>
-</body>
-
-</html>
+    </html>

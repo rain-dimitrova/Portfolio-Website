@@ -8,7 +8,7 @@ body {
     background-color: black;
 
     background-attachment: fixed;
-    /* Optional: keeps image fixed during scrolling */
+    /* keeps my image fixed when scrolling */
     justify-content: center;
     background-size: cover;
     background-position: center;
@@ -17,12 +17,12 @@ body {
     min-height: 100vh;
 
     overflow-x: auto;
-    /* Allows horizontal scrolling if needed */
+    /* allows scrolling */
 }
 
 @font-face {
-    font-family: Mokoto, sans-serif;
-    src: url(mokoto.regular.ttf);
+    font-family: 'Mokoto', sans-serif;
+    src: url(fonts/mokoto.regular.ttf);
 }
 
 div {
@@ -51,11 +51,17 @@ div {
     border: 1px solid #ddd;
 }
 
+.nav-links a:hover {
+    color: #ff5e8a;
+    cursor: pointer;
+}
+
 .navbar-items {
     display: flex;
     justify-content: flex-end;
     width: auto;
 }
+
 
 .logo {
     font-size: 24px;
@@ -78,7 +84,7 @@ ul {
 
 .banner {
     display: flex;
-    justify-content: baseline;
+    align-items: baseline;
 }
 
 .hero {
@@ -126,17 +132,16 @@ ul {
     }
 }
 
-/* New content section styling */
+/*intro styling*/
 .intro {
     margin-top: 0;
-    /* No space above - sits right against banner */
     padding: 40px 20px;
     background: rgba(0, 0, 0, 0.8);
-    /* Dark semi-transparent background */
+    /* dark semi-transparent background */
     color: white;
 }
 
-/* Optional: Add smooth transition when content loads */
+/* adds smooth transition when content loads */
 .intro {
     animation: fadeIn 0.5s ease-out;
 }
@@ -177,35 +182,26 @@ ul {
     font-size: 18px;
 }
 
-.intro button {
+.button {
     background-color: #ff5e8a;
     border: none;
-    color: #ffffff;
     border-radius: 10px;
-    width: 120px;
-    height: 50px;
-    font-size: 18px;
-    font-family: Mokoto, sans-serif;
-    font-weight: bold;
-    width: 200px;
+    color: white;
+    padding: 20px 34px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
 }
 
 .intro-buttons {
     padding-top: 80px;
 }
 
-.carousel {
-    background-color: black;
-    height: auto;
-    width: auto;
-    padding: 6em 10em;
-    display: flex;
-}
 
-.imagecarousel img {
-    height: 400px;
-}
-
+/*                        ABOUT PAGE                  */
 .about {
     display: flex;
     margin-top: 0;
@@ -267,12 +263,13 @@ ul {
     flex-direction: column;
 }
 
-/* Reset and base styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+/*                   PORTFOLIO PAGE           */
 
 .projects {
     display: flex;
@@ -291,19 +288,25 @@ ul {
     height: 20rem;
 }
 
-.proj1 {
+.proj1,
+.proj3 {
     background-color: #fff;
     color: black;
     overflow: auto;
 }
 
-.proj2 {
+.proj2,
+.proj4 {
     background-color: #000000;
     color: rgb(255, 255, 255);
     overflow: auto;
 }
 
-.proj1content, .proj2content {
+
+.proj1content,
+.proj2content,
+.proj3content,
+.proj4content {
     padding: 40px;
     margin: 0 100px 20px 100px;
     display: flex;
@@ -312,33 +315,52 @@ ul {
 
 }
 
-.proj1content h1, .proj2content h1 {
+.proj1content h1,
+.proj2content h1,
+.proj3content h1,
+.proj4content h1 {
     font-size: 6vw;
 }
 
 
-.proj1images, .proj2images {
+.proj1images,
+.proj2images,
+.proj3images,
+.proj4images {
     display: flex;
     flex-direction: row;
     gap: 20px;
 }
 
-.proj1text, .proj2text {
+.proj1text,
+.proj2text,
+.proj3text,
+.proj4text {
     margin-bottom: 20px;
 }
 
-.proj1images img, .proj2images img {
+.proj1images img,
+.proj2images img,
+.proj3images img {
+    height: 24rem;
+}
+
+.proj4images img {
+    height: 10rem;
+}
+
+.proj3images video {
     height: 24rem;
 }
 
 
-
-
-
-
-
 /*              COMMMISSION FORM                 */
 
+.commission-container h1 {
+    text-align: center;
+    color: white;
+    margin-top: 1em;
+}
 
 .commission-form {
     max-width: 700px;
@@ -411,12 +433,12 @@ ul {
 }
 
 .terms a {
-    color: #4a6fa5;
+    color: #b8014a;
     text-decoration: underline;
 }
 
 .submit-btn {
-    background: #4a6fa5;
+    background: #b8014a;
     color: white;
     border: none;
     padding: 0.9rem;
@@ -428,7 +450,7 @@ ul {
 }
 
 .submit-btn:hover {
-    background: #3a5a80;
+    background: #ff5e8a;
 }
 
 @media (max-width: 600px) {
@@ -436,4 +458,217 @@ ul {
         flex-direction: column;
         gap: 0;
     }
+}
+
+/*                        Home Page Carousel                   */
+/* Used a tutorial online for this carousel, as I tried many times to make it
+    work and just couldn't! Could've used a simpler tutorial but I wanted a cute
+    carousel */
+
+.carouselindex {
+    height: 600px;
+    margin: 0;
+    display: grid;
+    grid-template-rows: 500px 100px;
+    grid-template-columns: 1fr 30px 30px 30px 30px 30px 1fr;
+    align-items: center;
+    justify-items: center;
+    position: relative;
+}
+
+main#carousel {
+    padding-top: 5em;
+    grid-row: 1 / 2;
+    grid-column: 1 / 8;
+    width: 90vw;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    perspective: 600px;
+    --items: 5;
+    --middle: 3;
+    --position: 1;
+    pointer-events: none;
+}
+
+.carouselheader {
+    color: white;
+    position: absolute;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 3em;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1em;
+}
+
+/* edited the tutorial code to display a background image instead of
+    a color, and added rounded corners :) */
+
+div.item {
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    border-radius: 20px;
+    --r: calc(var(--position) - var(--offset));
+    --abs: max(calc(var(--r) * -1), var(--r));
+    transition: all 0.25s linear;
+    transform: rotateY(calc(-10deg * var(--r))) translateX(calc(-300px * var(--r)));
+    z-index: calc((var(--position) - var(--abs)));
+
+}
+
+div.item:nth-of-type(1) {
+    --offset: 1;
+    background-image: url(images/p5grunge.jpg);
+    background-size: contain;
+}
+
+div.item:nth-of-type(2) {
+    --offset: 2;
+    background-image: url(images/kokomi.jpg);
+    background-size: contain;
+}
+
+div.item:nth-of-type(3) {
+    --offset: 3;
+    background-image: url(images/p5brut.jpg);
+    background-size: contain;
+}
+
+div.item:nth-of-type(4) {
+    --offset: 4;
+    background-image: url(images/acheswan.jpg);
+    background-size: contain;
+}
+
+div.item:nth-of-type(5) {
+    --offset: 5;
+    background-image: url(images/theherta.jpg);
+    background-size: contain;
+}
+
+input:nth-of-type(1) {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+input:nth-of-type(1):checked~main#carousel {
+    --position: 1;
+}
+
+input:nth-of-type(2) {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+}
+
+input:nth-of-type(2):checked~main#carousel {
+    --position: 2;
+}
+
+input:nth-of-type(3) {
+    grid-column: 4 /5;
+    grid-row: 2 / 3;
+}
+
+input:nth-of-type(3):checked~main#carousel {
+    --position: 3;
+}
+
+input:nth-of-type(4) {
+    grid-column: 5 / 6;
+    grid-row: 2 / 3;
+}
+
+input:nth-of-type(4):checked~main#carousel {
+    --position: 4;
+}
+
+input:nth-of-type(5) {
+    grid-column: 6 / 7;
+    grid-row: 2 / 3;
+}
+
+input:nth-of-type(5):checked~main#carousel {
+    --position: 5;
+}
+
+
+
+/*                     FOOTER                    */
+.footer {
+    background-color: #ff5e8a;
+    display: flex;
+    padding: 2em;
+    gap: 8em;
+    justify-content: center;
+}
+
+.footerlinks {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer a {
+    color: black;
+    text-decoration: none;
+    font-size: 30px;
+}
+
+.footer a:hover {
+    color: white;
+}
+
+.footericons {
+    display: flex;
+    color: black;
+    flex-direction: column;
+}
+
+.footersocmed {
+    display: flex;
+    flex-direction: row;
+    margin-left: 3em;
+    margin-top: 0.8em;
+    justify-content: center;
+}
+
+.footerusernames {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    gap: 42px;
+    padding: 0.1em;
+    margin-left: 10px;
+    margin-top: 4px;
+}
+
+.footercontact {
+    background-color: #fff;
+    padding: 1.5em;
+    border-radius: 10px;
+    margin-left: 3em;
+    text-align: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.footercontact h1 {
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 0.1em;
+}
+
+.copyright {
+    background-color: #ff5e8a;
+    color: white;
+    text-align: center;
+    padding-bottom: 1em;
 }
